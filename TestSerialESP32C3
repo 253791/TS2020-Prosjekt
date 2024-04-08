@@ -1,0 +1,13 @@
+#include <Arduino.h>
+
+void setup() {
+  Serial.begin(115200); // Initialize serial communication with a baud rate of 115200
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    String incomingText = Serial.readStringUntil('\n');  // Read user input until newline
+    Serial.print("Received: ");
+    Serial.println(incomingText); 
+  }
+}
